@@ -10,11 +10,12 @@ const router = Router()
 // /api/auth/register
 router.post(
     '/register', 
-    [check('email', 'Uncorrect email').isEmail(),
+    [check('email', 'Invalid email').isEmail(),
     check('password', 'password should contain at least 6 characters').isLength( { min: 6 } )
     ],
     async (req, res) => {
     try {
+        console.log('request body', req.body)
         const errors = validationResult (req)
 
         if(!errors.isEmpty()) {
@@ -82,10 +83,10 @@ async (req, res) => {
             { expiresIn: '1h'}
         )
 
-        res.join({ token, userId: user.id })
+        res.json({ token, userId: user.id })
 
     } catch (e) {
-        res.status(500).json({message: 'something gone wrong, try again'})
+        res.status(500).json({message: 'something going wrong, try again'})
     }
 })
 

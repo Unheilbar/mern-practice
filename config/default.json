@@ -1,5 +1,6 @@
 {
     "port":5000,
     "jwtSecret": "K22021988 yV",
+    "baseUrl": "http://localhost:5000",
     "mongoUri":"mongodb://unheilbar:123qwer@cluster0-shard-00-00-83zhs.azure.mongodb.net:27017,cluster0-shard-00-01-83zhs.azure.mongodb.net:27017,cluster0-shard-00-02-83zhs.azure.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
 }
